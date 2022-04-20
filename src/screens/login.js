@@ -1,5 +1,6 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, TextInput } from "react-native";
+
+import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity, TouchableHighlight, Pressable  } from "react-native";
+
 
 
 function Login(){
@@ -11,13 +12,14 @@ function Login(){
 <Text style={styles.title}>Swade[i]</Text>
 </View>
 <View style={styles.midContainer}>
+
+
 <Text>Email</Text>
 <TextInput
 placeholder="Enter your Email"
 style = {styles.input}
 onSubmitEditing={(InputDate)=>{
-    alert(InputDate.nativeEvent.text)
-}}
+    alert(InputDate.nativeEvent.text)}}
 keyboardType ={"email-address"}
 />
 
@@ -27,6 +29,7 @@ placeholder="Enter your Password"
 secureTextEntry={true}
 style = {styles.input}
 />
+
 
 </View>
 <View style={styles.BottomContainer}></View>
@@ -54,6 +57,8 @@ topContainer:{
 
 midContainer:{
     flex:2,
+    padding:10,
+    alignItems:"center"
    
 },
 
@@ -74,6 +79,9 @@ fontSize:25,
 input:{
 borderWidth:1,
 height:30,
+width:300,
+padding:8,
+borderRadius:12,
 },
 
 });
