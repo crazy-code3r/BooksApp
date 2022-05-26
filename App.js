@@ -1,10 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import Login from './src/screens/login';
-import SignUp from './src/screens/sIgnUp';
+// In App.js in a new project
 
+import * as React from 'react';
+import { View, Text, Button} from 'react-native';
+import {NavContainer} from "./src/services/navigation";
 
-export default function App() {
-  return (    
-     <SignUp/>
+function App() {
+  return (
+    <NavContainer/>
   );
 }
+
+export {App};

@@ -1,69 +1,40 @@
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity, TouchableHighlight, Pressable, Image,ScrollView  } from "react-native";
 
-
-
-function SignUp(){
+function UserProfile(){
     return(
    <View style={styles.container}>  
-<ScrollView horizontal={false}
-  showsHorizontalScrollIndicator={true}>
+<ScrollView horizontal={false} showsHorizontalScrollIndicator={true}>
+
 <View style={styles.container}> 
 
-<View style={styles.topContainer}>
-<Image style = {styles.logoImg}
-source ={require('../../assets/slogop.png')}
-    />
-<Text >___________________________________</Text>
+<View style={styles.topContainer}></View>
+    
+<View style={styles.picContainer}>
+<Image style = {styles.logoImg} source ={require('../../assets/pic.jpg')}/>
 </View>
 
-
+    
 <View style={styles.midContainer}>
+<Text style={styles.scTitle}>NEOND LAL</Text>
 
-<Text style={styles.scTitle}>Sign Up</Text>
-
-<Text style={styles.lables}>Full Name</Text>
-<TextInput
-placeholder="Full Name"
-style = {styles.input}  
-onSubmitEditing={(InputDate)=>{
-    alert(InputDate.nativeEvent.text)}}
-
-/>
-
-<Text style={styles.lables}>Email</Text>
-<TextInput
-placeholder="Email"
-style = {styles.input}
-onSubmitEditing={(InputDate)=>{
-    alert(InputDate.nativeEvent.text)}}
-keyboardType ={"email-address"}
-/>
-
-<Text style={styles.lables}>Password</Text>
-<TextInput
-placeholder="Password"
-secureTextEntry={true}
-style = {styles.input}
-/>
-
-<Text style={styles.lables}>Password</Text>
-<TextInput
-placeholder="Confirm Password"
-secureTextEntry={true}
-style = {styles.input}
-/>
+<Text style={styles.lablesVlaue}> amman7222@gmail.com</Text>
 
 
-<TouchableOpacity style={styles.button}>
-    <Text> Login </Text>
-</TouchableOpacity>
+<View style={{padding:10, backgroundColor:"white",width:300,height:50, borderRadius:20,alignItems:"center", marginTop:30,}}>
 
+<View style={{flexDirection:"row", flexWrap:"wrap",}}>
+<Image style = {{height:50,width:50,resizeMode:"contain", }} source ={require('../../assets/email-logo-png-1114.png')}/>
+<Text style={styles.lables}> My Books</Text> 
+</View>
+ 
+</View>
 
 </View>
+
+
 <View style={styles.BottomContainer}></View>
-<TouchableOpacity>
-    <Text style={styles.bottomLabels}> Do you have account already? SIGN IN </Text>
-</TouchableOpacity>
+
+
 </View>
 </ScrollView>
 </View>   
@@ -75,7 +46,8 @@ const styles = StyleSheet.create({
 
     container:{
         flex:1,
-        backgroundColor :"#FFD36E"
+        backgroundColor :"#FFD36E",
+
     },
     
     topContainer:{
@@ -83,18 +55,19 @@ const styles = StyleSheet.create({
         
         alignItems:"center",
         justifyContent:"center",
-            paddingTop:90,
-            paddingBottom:30,
-            backgroundColor :"#FFD36E"
-    
+        padding:90,
+            backgroundColor :"#FCF69C",
+            borderBottomLeftRadius: 20,
+            borderBottomRightRadius: 20,
     },
     
     midContainer:{
         flex:2,
-        padding:10,
+        padding:5,
         alignItems:"center",
         backgroundColor :"#FFD36E",
         marginHorizontal: 20,
+        borderTopLeftRadius:30,
     },
     
     bottomContainer:{
@@ -102,9 +75,12 @@ const styles = StyleSheet.create({
         backgroundColor :"#FFD36E",
         alignItems:"center",
         justifyContent:"center",
-        
     
     },
+    picContainer:{
+
+        marginTop : -100,    
+       },
     title:{
      
         fontWeight:"bold",
@@ -133,19 +109,33 @@ const styles = StyleSheet.create({
     },
     
     logoImg:{
-    height:90,
+    height:150,
     width:350,
+    marginBottom:10,
     resizeMode:"contain",
-
-
+    borderRadius:180,
+    borderColor:"#FFF56D",
+   
     },
+
+    lableImg:{
+        height:20,
+        width:350,
+        marginBottom:10,
+        resizeMode:"contain",
+       
+        },
     
     lables:{
-        paddingTop:15,
-        paddingBottom:5,
+        color:"black",
+        fontSize:20,
     
         
         },
+
+        lablesVlaue:{   
+         color:"#8D8DAA"
+            },
     
         button:{
             backgroundColor:"white",
@@ -175,6 +165,8 @@ const styles = StyleSheet.create({
     
         },
 
+       
+
     });
 
-export  {SignUp};
+export default UserProfile;
